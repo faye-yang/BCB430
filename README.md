@@ -2,8 +2,12 @@
 - download files and patial data: git fork https://github.com/faye-yang/BCB430.git
 - change file name and file path as needed in main and body function for all files as needed. Only ParsePassatotoOutput.py has use file path in the function body to check if a file exist.
 - most of the files are parsers, script files not in passatuto and sirius might need to change file path.
+- Passatuto2 and SIRIUS4 are in two docker containers
 
-# Data file for passatuto (docker)
+
+
+
+# Data file for passatuto
 - Library file: DDA_consensus_library_pos.tsv
 - txt file for sirius:Passatuto2/fragmentationTree
 - .Dot files from SIRUS:Passatuto2/tree_dot
@@ -76,6 +80,43 @@ v3 -> v5 [label="C2H4O"];
 
 }
 ```
+
+
+# docker
+To start:
+
+`docker build -t Sirius .`
+
+`docker run -d --name Sirius-container -p 80:80 Sirius:latest`
+
+`docker start Sirius-container`
+
+To stop/remove container:
+
+`docker stop Sirius-container`
+
+`docker rm Sirius-container`
+
+To start:
+
+`docker build -t Passatuto .`
+
+`docker run -d --name Passatuto-container -p 80:80 Passatuto:latest`
+
+`docker start Passatuto-container`
+
+To stop/remove container:
+
+`docker stop Passatuto-container`
+
+`docker rm Passatuto-container`
+
+# Use docker (not deploy yet not test yet)
+` docker run -d --name Sirius-container -p 80:80 Sirius:latest; docker start Sirius-container`
+
+` docker run -d --name Passatuto-container -p 80:80 Passatuto:latest; docker start Passatuto-container `
+
+
 
 
 
