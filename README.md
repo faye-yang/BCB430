@@ -56,17 +56,17 @@ random/conditional peak: Library file(DDA_consensus_library_pos.tsv)->ms file(Pa
 reroot method: Library file(DDA_consensus_library_pos.tsv) -> txt file(Passatuto2/fragmentationTree) -> SIRIUS4 (output file:Passatuto2/tree_dot) --> parse dot file format(using formatSirius funtion of library2ms.py; output file:Passatuto2/TreeDir) -> output file( Passatuto2/output_reroot)
 
 
-e.g.
+example fragmentation tree .dot file format
 ```
 strict digraph {
-	v1 [label="C57H87O3\n819.6650 Da, 0.00 %\ncE: [10]\nScore: 1.0000"];
-	v2 [label="C6H13O3\n133.0863 Da, 72.59 %\ncE: [10]\nScore: -7.1438"];
-	v3 [label="C4H9O2\n89.0593 Da, 100.00 %\ncE: [10]\nScore: 14.4395"];
-	v4 [label="C6H13\n85.1005 Da, 29.18 %\ncE: [10]\nScore: 6.0633"];
-	v5 [label="C2H5O\n45.0334 Da, 41.80 %\ncE: [10]\nScore: 6.3635"];
+v1 [label="C57H87O3\n819.6650 Da, 0.00 %\ncE: [10]\nScore: 1.0000"];
+v2 [label="C6H13O3\n133.0863 Da, 72.59 %\ncE: [10]\nScore: -7.1438"];
+v3 [label="C4H9O2\n89.0593 Da, 100.00 %\ncE: [10]\nScore: 14.4395"];
+v4 [label="C6H13\n85.1005 Da, 29.18 %\ncE: [10]\nScore: 6.0633"];
+v5 [label="C2H5O\n45.0334 Da, 41.80 %\ncE: [10]\nScore: 6.3635"];
 
-	v1 -> v2 [label="C51H74"];
-	v3 -> v5 [label="C2H4O"];
+v1 -> v2 [label="C51H74"];
+v3 -> v5 [label="C2H4O"];
 
 }
 ```
