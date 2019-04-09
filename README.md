@@ -46,7 +46,7 @@ function:
  * e.g. cat conditionalPeak_library_reroot.tsv ../DDA_consensus_library_pos.tsv >> conditionalPead_decoy.tsv  .replace the file path as you need for all decoy library
 
 
-* insturction/work flow:
+# insturction/work flow:
 Passatuto2 example command: java -cp "lib/passatutto.jar:lib/json-1.0.jar:lib/commons-math3-3.4.1.jar:lib/trove4j-3.0.3.jar" DecoyDatabaseConstruction -target /data2 -out /outputRandom -method RandomPeaks -ppm 10 -ae 2
 SIRIUS4 example command:
 sirius -f C20H19NO5 -2 demo-data/txt/chelidonine_msms2.txt demo-data/txt/chelidonine_msms2.txt
