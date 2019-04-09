@@ -1,14 +1,16 @@
-*Data file for passatuto (docker)
+* Data file for passatuto (docker)
 - Library file: DDA_consensus_library_pos.tsv
+- txt file for sirius:Passatuto2/fragmentationTree
 - .Dot files from SIRUS:Passatuto2/tree_dot
 - parsed .Dot files from .Dot file for Passatuto: Passatuto2/TreeDir
 - source data from Passatuto2: Passatuto2/Data
 - parsed .ms file for RandomPeaks and conditionalPeak method: Passatuto2/data2
-- partial data from reroot method from passatuto: Passatuto2/output_reroot
+- output data from reroot method from passatuto: Passatuto2/output_reroot
+- output data from conditional peak method from passatuto2: Passatuto2/output_conditionalPeak
 
 
 *tools using (not included in the github but in gitter):
-- SIRIUS:a tool that construct a fragmentation tree
+- SIRIUS:a tool that construct a fragmentation tree, script.sh to run sirius
 - Passatuto2: a tool that construct decoy library using 4 methods,RandomPeaks, conditionalPeak, reroot, and Empirical-Bayes-
 Approach(this appoarch can only support for the tool source data using method and database: MassBank,CosineDistance).
 
@@ -18,8 +20,8 @@ e.g. java -cp "lib/passatutto.jar:lib/json-1.0.jar:lib/commons-math3-3.4.1.jar:l
 * script directoy:
 - convert.py: a script from Prof. Hannes Rost that convert decoy library.
 - control.sh:example command and output from Prof. Hannes Rost for running the OpenSwath and pyprophet
-
-- library2ms.py:
+- script.sh: a bash script to run sirius.  Note: it must  in sirius/bin/ directory to work. the github version is just a copy. to run this file:  cd sirius/bin/ then  ./script.sh
+- library2ms.py: a parser script that has many parsers
 * goal:parse mass spectrometry library file (e.g.DDA_consensus_library_pos.tsv) to ms file for sirius and passatuto for RandomPeaks and conditionalPeak method and parse file from .dot to older version of SIRIUS .dot for reroot method.
 
 function:
@@ -37,6 +39,22 @@ function:
 3.formatSirius: parse file from .dot to older version of SIRIUS .dot for reroot method
 - input:a path to the dot file
 - output: a dot file in a older verison of SIRIUS dot file.
+
+- ParsePassatotoOutput.py:
+
+- transition.py: a decoy transition library file. Need to concatenate with target library to work for Pyprophet and OpenSwath for all decoy libraries after running this function.
+ * e.g. cat conditionalPeak_library_reroot.tsv ../DDA_consensus_library_pos.tsv >> conditionalPead_decoy.tsv  .replace the file path as you need for all decoy library
+
+
+* insturction/work flow:
+Passatuto2 example command: java -cp "lib/passatutto.jar:lib/json-1.0.jar:lib/commons-math3-3.4.1.jar:lib/trove4j-3.0.3.jar" DecoyDatabaseConstruction -target /data2 -out /outputRandom -method RandomPeaks -ppm 10 -ae 2
+SIRIUS4 example command:
+sirius -f C20H19NO5 -2 demo-data/txt/chelidonine_msms2.txt demo-data/txt/chelidonine_msms2.txt
+SIRIUS4 example script:
+
+random/conditional peak: Library file(DDA_consensus_library_pos.tsv)->ms file(Passatuto2/data2) ->run passatuto2 -> output file (output_conditionalPeak)
+reroot method: Library file(DDA_consensus_library_pos.tsv) -> txt file(Passatuto2/fragmentationTree) -> SIRIUS4 (output file:Passatuto2/tree_dot) --> parse dot file format(using formatSirius funtion of library2ms.py; output file:Passatuto2/TreeDir) -> output file( Passatuto2/output_reroot)
+
 
 e.g.
 ```
