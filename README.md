@@ -5,10 +5,15 @@
 - Passatuto2 and SIRIUS4 are in two docker containers
 
 
+# Data files
+-  Target Library file: DDA_consensus_library_pos.tsv
+- DDA_decoy_library_reroot.txt: transition file for reroot  method
+- DDA_decoy_library.txt: transition file for conditional peak method
+- decoy_library_reroot.tsv: decoy library for reroot method
+- conditionalPeak_library_decoy.tsv: decoy library for conditional peak method
 
-
-# Data file for passatuto
-- Library file: DDA_consensus_library_pos.tsv
+## Data file of passatuto2
+* contain all zip data files that is used for or outputed from passatuto2
 - txt file for sirius:Passatuto2/fragmentationTree
 - .Dot files from SIRUS:Passatuto2/tree_dot
 - parsed .Dot files from .Dot file for Passatuto: Passatuto2/TreeDir
@@ -16,6 +21,7 @@
 - parsed .ms file for RandomPeaks and conditionalPeak method: Passatuto2/data2
 - output data from reroot method from passatuto: Passatuto2/output_reroot
 - output data from conditional peak method from passatuto2: Passatuto2/output_conditionalPeak
+- dockerfile: a copy of docker file for building the docker image
 
 
 # tools using (not included in the github but in gitter):
@@ -83,6 +89,10 @@ v3 -> v5 [label="C2H4O"];
 
 
 # docker
+ref tutorial: https://www.youtube.com/watch?v=FlSup_eelYE
+
+dockerfile: https://docs.docker.com/engine/reference/builder/
+
 To start:
 
 `docker build -t Sirius .`
