@@ -81,8 +81,8 @@ import sys
 #inp = sys.argv[1]
 #outp = sys.argv[2]
 if __name__ == "__main__":
- inpDecoy = "/Users/yufei/Desktop/2019winter/BCB430/DDA_decoy_library_reroot.txt"
- outp = "/Users/yufei/Desktop/2019winter/BCB430/decoy_library_reroot.tsv"
+ inpDecoy = "./DDA_decoy_library_reroot.txt"
+ outp = "./decoy_library_reroot.tsv"
  inp="./DDA_consensus_library_pos.tsv"
 
  flibrary=open(inp)

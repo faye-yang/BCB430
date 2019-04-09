@@ -1,7 +1,8 @@
 import os
 
 
-#parse the passatuto file output file to a format that convert.py can use
+#parse the passatuto file output file to a format that transition.py can use
+
 def parse(input_path,output_path,directory):
     ms_counter = 0
     out=open(output_path,"a+")
@@ -13,9 +14,11 @@ def parse(input_path,output_path,directory):
     for line in f:
         if line.startswith("Formula") :
             formula = line.split(": ")[1].split("\n")[0]
+            # check file exist make sure path correct before running
             if (formula not in formulaList) and ("1_" + formula + "_M+H+.txt") in os.listdir(directory):
                 out.write(line)
             ms_counter=0
+        # check file exist make sure path correct before running
         if ("1_" + formula + "_M+H+.txt") in os.listdir(directory) and (formula not in formulaList):
             if line.startswith("Charge") \
                     or line.startswith( "RT") \
@@ -29,7 +32,8 @@ def parse(input_path,output_path,directory):
                 if ms_counter ==5:
                     out.write(line.split("/n")[0])
                     i = 0
-
+                    # reading file make sure path correct before running
+                    # output file for passatuto reroot method 1_FORMULA_M+h+.txt files
                     with open(directory+"1_"+formula+"_M+H+.txt", 'r+') as f:
                         mzlist = []
                         sumInt = 0
@@ -70,8 +74,8 @@ def parse(input_path,output_path,directory):
 
 
 if __name__ == "__main__":
- #inp = "./DDA_consensus_library_pos.txt"
- int="./DDA_library_pos.txt"
+ #if running in BCB430/script directory, do not need to change file path. else, o.w.
+ int="../Data/DDA_library_pos.txt"
 
  # example data
  #Formula: C6H7N5O2
@@ -81,33 +85,13 @@ if __name__ == "__main__":
  #Elution: 30
  #Isotope: 2
  #MS2_Spectrum: 30
- counter1=0
- directory = "/Users/yufei/Desktop/2019winter/BCB430/Passatutto2/output_reroot/"
- parse(int, "/Users/yufei/Desktop/2019winter/BCB430/DDA_decoy_library.txt", directory)
+ 
+ #need to change to your path to passatuto2
+ directory = "/Passatutto2/output_reroot/"
+ #if running in BCB430/script directory, do not need to change ../Data/DDA_decoy_library.txt. else, o.w.
+ parse(int, "../Data/DDA_decoy_library.txt", directory)
 
 
-         # find the files that do not have an output from passatuto2 reroot method
- # formularList=[]
- # counter=[]
- # for filename in os.listdir(directory):
- #    filename = os.path.splitext(filename)[0]
- #    formularList.append(filename)
- # f= open(int)
- # out=open("/Users/yufei/Desktop/2019winter/BCB430/DDA_library_pos.txt","a+")
- # for line in f:
- #     formula = ""
- #     if line.startswith("Formula"):
- #         formula = line.split(": ")[1].split("\n")[0]
- #         out.write(line)
- #     if formula not in formularList:
- #        if formula not in counter:
- #             counter.append(formula)
- #
- #        if not line.startswith("Formula"):
- #            out.write(line)
- #        else:
- #            pass
- # print(len(counter),len(os.listdir(directory)))
 
 
 
