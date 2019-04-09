@@ -25,9 +25,11 @@
 
 
 # tools using (not included in the github but in gitter):
-- SIRIUS:a tool that construct a fragmentation tree, script.sh to run sirius
-- Passatuto2: a tool that construct decoy library using 4 methods,RandomPeaks, conditionalPeak, reroot, and Empirical-Bayes-
-Approach(this appoarch can only support for the tool source data using method and database: MassBank,CosineDistance).
+### SIRIUS:a tool that construct a fragmentation tree, script.sh to run sirius
+- website: https://bio.informatik.uni-jena.de/software/sirius/
+### Passatuto2: a tool that construct decoy library using 4 methods,RandomPeaks, conditionalPeak, reroot, and Empirical-Bayes-
+- Approach(this appoarch can only support for the tool source data using method and database: MassBank,CosineDistance).
+- github: https://github.com/boecker-lab/passatuto
 
 e.g. java -cp "lib/passatutto.jar:lib/json-1.0.jar:lib/commons-math3-3.4.1.jar:lib/trove4j-3.0.3.jar" DecoyDatabaseConstruction -target /data2 -out /outputRandom -method RandomPeaks -ppm 10 -ae 2
 
