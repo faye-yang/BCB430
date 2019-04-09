@@ -39,7 +39,7 @@ function:
 - output: a dot file in a older verison of SIRIUS dot file.
 
 e.g.
-'''
+```
 strict digraph {
 	v1 [label="C57H87O3\n819.6650 Da, 0.00 %\ncE: [10]\nScore: 1.0000"];
 	v2 [label="C6H13O3\n133.0863 Da, 72.59 %\ncE: [10]\nScore: -7.1438"];
@@ -51,7 +51,7 @@ strict digraph {
 	v3 -> v5 [label="C2H4O"];
 
 }
-'''
+```
 
 
 
