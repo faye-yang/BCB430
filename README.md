@@ -101,7 +101,7 @@ To start:
 
 `docker build -t Passatuto .`
 
-`docker run -d --name Passatuto-container -p 80:80 Passatuto:latest`
+`docker run -d --name Passatuto-container -p 80:80 Passatuto:latest`  (debug mode)
 
 `docker start Passatuto-container`
 
@@ -112,9 +112,10 @@ To stop/remove container:
 `docker rm Passatuto-container`
 
 # Use docker (not deploy yet not test yet)
-` docker run -d --name Sirius-container -p 80:80 Sirius:latest; docker start Sirius-container`
 
-` docker run -d --name Passatuto-container -p 80:80 Passatuto:latest; docker start Passatuto-container `
+` docker run -it --name Sirius-container -p 80:80 Sirius:latest; docker start Sirius-container`   (interactive mode)
+
+` docker run -it --name Passatuto-container -p 80:80 Passatuto:latest; docker start Passatuto-container `
 
 
 
