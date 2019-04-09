@@ -30,6 +30,7 @@ e.g. java -cp "lib/passatutto.jar:lib/json-1.0.jar:lib/commons-math3-3.4.1.jar:l
 - goal:parse mass spectrometry library file (e.g.DDA_consensus_library_pos.tsv) to ms file for sirius and passatuto for RandomPeaks and conditionalPeak method and parse file from .dot to older version of SIRIUS .dot for reroot method.
 
 - function:
+
 1.parseLibMs:parse mass spectrometry library file e.g.DDA_consensus_library_pos.tsv passatuto for RandomPeaks and conditionalPeak method. 
 * Need: mass spectrometry library file
 - input: a line of the library file which contain infomation about molecule, that must contain: compound name, formula,parentmass
