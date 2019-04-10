@@ -97,37 +97,36 @@ dockerfile: https://docs.docker.com/engine/reference/builder/
 
 To start:
 
-`docker build -t Sirius .`
+`docker build -t sirius .`
 
-`docker run -d --name Sirius-container -p 80:80 Sirius:latest`
+`docker run -d --name sirius-container -p 80:80 sirius:latest`
 
-`docker start Sirius-container`
 
 To stop/remove container:
 
-`docker stop Sirius-container`
+`docker stop sirius-container`
 
-`docker rm Sirius-container`
+`docker rm sirius-container`
 
 To start:
 
-`docker build -t Passatuto .`
+`docker build -t passatuto .`
 
-`docker run -d --name Passatuto-container -p 80:80 Passatuto:latest`  (debug mode)
+`docker run -t passatuto /TreeDir /output_reroot Reroot`
 
-`docker start Passatuto-container`
 
 To stop/remove container:
 
-`docker stop Passatuto-container`
+`docker stop passatuto-container`
 
-`docker rm Passatuto-container`
+`docker rm passatuto-container`
 
 # Use docker (not deploy yet not test yet)
 
-` docker run -it --name Sirius-container -p 80:80 Sirius:latest; docker start Sirius-container`   (interactive mode)
+` docker run -it --name sirius-container -p 80:80 sirius:latest; docker start sirius-container`   (interactive mode)
 
-` docker run -it --name Passatuto-container -p 80:80 Passatuto:latest; docker start Passatuto-container `
+` docker run -t passatuto /TreeDir /output_reroot Reroot `
+
 
 
 
