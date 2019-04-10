@@ -99,7 +99,7 @@ To start:
 
 `docker build -t sirius .`
 
-`docker run -d --name sirius-container -p 80:80 sirius:latest`
+`docker run -t sirius /fragmentationTree `
 
 
 To stop/remove container:
@@ -123,7 +123,7 @@ To stop/remove container:
 
 # Use docker (not deploy yet not test yet)
 
-` docker run -it --name sirius-container -p 80:80 sirius:latest; docker start sirius-container`   (interactive mode)
+` docker run -t  sirius`   (interactive mode)
 
 ` docker run -t passatuto /TreeDir /output_reroot Reroot `
 
