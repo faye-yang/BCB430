@@ -24,7 +24,7 @@
 - dockerfile: a copy of docker file for building the docker image
 
 
-# tools using (not included in the github but in gitter):
+# tools using (softwares are not included in the github):
 ### SIRIUS:a tool that construct a fragmentation tree, script.sh to run sirius
 - website: https://bio.informatik.uni-jena.de/software/sirius/
 ### Passatuto2: a tool that construct decoy library using 4 methods,RandomPeaks, conditionalPeak, reroot, and Empirical-Bayes-
