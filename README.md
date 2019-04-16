@@ -113,9 +113,11 @@ To stop/remove container:
 ` docker run -t passatuto /TreeDir /output_reroot Reroot `
 
 # cluster
+###  home dir: /home/yangyu35/projects/def-hroest/yangyu35/
 - temp.sh: a template file for running openswath
 - library2.sh: file for running openswath
 - pypro.sh: file for running pyprophet
+* directory:
 - conditionalPeakDecoy: conditional peak data for openswath(libraryConditionalPeak) and pyprophet output(pypro_output/)
 - decoy_rt：openswath data and pyprophet output(pypro_output/) for random transition decoy library.
 - decoy_50s: openswath data and pyprophet output(pypro_output/) for random retention time shift decoy library.
