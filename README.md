@@ -97,19 +97,6 @@ dockerfile: https://docs.docker.com/engine/reference/builder/
 
 To start:
 
-`docker build -t sirius .`
-
-`docker run -t sirius /fragmentationTree `
-
-
-To stop/remove container:
-
-`docker stop sirius-container`
-
-`docker rm sirius-container`
-
-To start:
-
 `docker build -t passatuto .`
 
 `docker run -t passatuto /TreeDir /output_reroot Reroot`
@@ -123,12 +110,18 @@ To stop/remove container:
 
 # Use docker (not deploy yet not test yet)
 
-` docker run -t  sirius`   (interactive mode)
-
 ` docker run -t passatuto /TreeDir /output_reroot Reroot `
 
-
-
+# cluster
+- temp.sh: a template file for running openswath
+- library2.sh: file for running openswath
+- pypro.sh: file for running pyprophet
+- conditionalPeakDecoy: conditional peak data for openswath(libraryConditionalPeak) and pyprophet output(pypro_output/)
+- decoy_rt：openswath data and pyprophet output(pypro_output/) for random transition decoy library.
+- decoy_50s: openswath data and pyprophet output(pypro_output/) for random retention time shift decoy library.
+- decoy_randMZ:openswath data and pyprophet output(pypro_output/) for random m/z decoy library.
+- decoy_ranSwath: openswath data and pyprophet output(pypro_output/) for a decoy library with 35m/z added to the precusor.
+- decoy_rerootL:  openswath data and pyprophet output(pypro_output/) for a decoy library with fragmentation tree method.
 
 
 
